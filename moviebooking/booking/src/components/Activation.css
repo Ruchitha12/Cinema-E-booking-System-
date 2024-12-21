@@ -1,0 +1,48 @@
+/* Background color for the body */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #ecf4ed;
+    outline: none !important;
+  }
+  
+  /* Container for the activation page */
+  .orderbox {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: white;
+  }
+  
+  /* Styling for the confirmation text */
+  .confirmationtext {
+    text-align: center;
+  }
+  
+  /* Custom style for the activation button */
+  .activation-button {
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 20px;
+    transition: background-color 0.3s;
+  }
+  
+  .activation-button:hover {
+    background-color: #00334e; /* Darker shade on hover */
+  }
+  
+  /* Link to login page */
+  .login-link {
+    color: #3a7bfd;
+    font-size: 14px;
+    text-decoration: underline;
+  }
+  
+  .login-link:hover {
+    text-decoration: underline;
+    color: black;
+  }
+  

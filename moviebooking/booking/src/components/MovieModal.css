@@ -1,0 +1,86 @@
+/* MovieModal.css */
+
+.modal-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.75);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+  
+  .modal-content {
+    background-color: #598392; /* Intermediate color for modal background */
+    padding: 20px;
+    position: relative;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    width: 80%;
+    max-width: 600px;
+    max-height: 90vh;
+    overflow-y: auto;
+    position: relative;
+  }
+  
+  .modal-content h2, .modal-content p {
+    color: #EFF6E0; /* Light text for readability */
+  }
+  
+  .modal-trailer iframe {
+    width: 100%;
+    height: 300px; /* Adjust based on your preference */
+    border-radius: 4px;
+    margin-top: 20px;
+  }
+  
+  /* Close button at the top right corner */
+  .close-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    padding: 5px 10px;
+    background-color: #01161E; /* Darkest color for buttons */
+    color: #EFF6E0; /* Light text */
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .close-button:hover {
+    background-color: #124559; /* Dark teal for button hover */
+  }
+  
+  /* Booking button - make it stand out */
+  .booking-button {
+    background-color: #AEC3B0; /* Lighter color for booking button */
+    color: #01161E; /* Dark text for readability */
+    position: absolute;
+    padding: 10px 20px;
+    margin-top: 20px;
+    border: none;
+    bottom: -35px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .booking-button:hover {
+    background-color: #EFF6E0; /* Lightest color for button hover */
+    color: #124559; /* Dark teal text on hover */
+  }
+  
+  @media (max-width: 768px) {
+    .modal-content {
+      width: 95%;
+      height: auto;
+    }
+  
+    .modal-trailer iframe {
+      height: 215px; /* Adjust for smaller screens */
+    }
+  }
+  

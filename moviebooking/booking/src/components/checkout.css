@@ -1,0 +1,126 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f8f8;
+}
+
+
+.orderbox {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    padding: 20px;
+    margin: 20px auto;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 1200px;
+}
+
+
+.orderdetails {
+    color: black;
+    flex: 1;
+    padding: 20px;
+    text-align: center;
+}
+
+
+.orderdetails h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+
+.orderdetails p {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+
+.rightbox {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.manage-promotions,
+.paymentmethodsgrid {
+    margin-top: 20px;
+    color: black;
+    text-align: center;
+}
+
+
+.manage-promotions form,
+.paymentform {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+
+.paymentform h2 {
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+
+.paymentform button {
+    width: 100%;
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+
+.paymentform button:hover {
+    background-color: #0056b3;
+}
+
+
+.paymentmethod,
+.cards {
+    background-color: #f0f0f0;
+    color: black;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+    width: 100%;
+}
+
+
+.confirmcancelbuttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+
+.confirmcancelbuttons {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: white;
+    padding: 10px;
+    display: flex;
+    justify-content: space-evenly;
+  }
+ 
+
+
+.confirmcancelbuttons button:hover {
+    background-color: #0056b3;
+    color: white;
+}

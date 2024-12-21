@@ -1,0 +1,148 @@
+/* HomePage.css */
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #124559; /* Dark teal background */
+  color: black; /* Text color set to black */
+  margin: 0;
+  padding: 0;
+}
+
+nav {
+  background-color: #01161E; /* Darkest color for navbar */
+  color: black; /* Text color set to black */
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav a {
+  color: black; /* Text color set to black */
+  text-decoration: none;
+  padding: 5px 10px;
+  transition: background-color 0.3s ease;
+}
+
+nav a:hover {
+  background-color: #555;
+}
+
+h1 {
+  text-align: center;
+  color: black; /* Text color set to black */
+  margin-top: 50px;
+}
+
+/* Search Bar Styles */
+.search-container {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+}
+
+.search-input {
+  width: 50%; /* Make the search bar take up half the width of its container */
+  padding: 10px;
+  margin: 0 auto; /* Center the search bar within the search-container */
+  border-radius: 20px; /* Rounded corners for the search bar */
+  border: 2px solid #AEC3B0; /* Border color from your theme */
+  background-color: #EFF6E0; /* Background color from your theme */
+  color: black; /* Text color set to black */
+  font-size: 16px; /* Slightly larger font size for better readability */
+  outline: none;
+}
+
+.search-input::placeholder {
+  color: #598392; /* Intermediate color for placeholder text */
+}
+
+.search-input:focus {
+  border-color: #124559; /* Dark teal color for border when the input is focused */
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 768px) {
+  .search-input {
+    width: 70%; /* Increase the width of the search bar on smaller screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .search-input {
+    width: 90%; /* Further increase the width of the search bar on very small screens */
+  }
+}
+
+/* Adjust the margins and padding as needed */
+
+.movie-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+
+.movie-card {
+  background-color: #598392; /* Intermediate color for card background */
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  position: relative;
+  cursor: pointer;
+  /* Add padding, margin, or other styles as needed */
+}
+
+.movie-poster {
+  width: 100%;
+  display: block;
+  border-radius: 4px;
+}
+
+.movie-title {
+  text-align: center;
+  margin-top: 8px; /* Adjust spacing as needed */
+  color: black; /* Text color set to black */
+  font-size: 1rem; /* Adjust font size as needed */
+}
+
+.movie-info {
+  padding: 10px;
+  background-color: #01161E; /* Darkest color for movie info background */
+  color: black; /* Text color set to black */
+}
+
+/* Responsive iframe */
+iframe {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9; /* Maintain a 16:9 aspect ratio for the video */
+}
+
+h2.section-heading {
+  text-align: center;
+  color: black; /* Text color set to black */
+  margin: 2rem 0;
+  padding-bottom: 0.5rem;
+  position: relative;
+  font-size: 2rem;
+}
+
+h2.section-heading::after {
+  content: '';
+  display: block;
+  width: 50%;
+  height: 3px;
+  background-color: #598392;
+  margin: 0 auto;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+/* Styles for No Movies Found Message */
+.no-movies-message {
+  text-align: center;
+  color: black;
+  margin-top: 20px;
+}

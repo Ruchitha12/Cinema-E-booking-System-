@@ -1,0 +1,211 @@
+.navbar {
+    background-color: #01161E;
+    margin-bottom: 30px;
+    height: 40px;
+}
+
+.navbar-brand {
+    font-family: 'fantasy';
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #124559;
+}
+
+* {
+    font-family: "Montserrat", sans-serif !important;
+    box-sizing: border-box;
+}
+
+.movie-container {
+    background-color: white;
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    color: black; /* Text color */
+}
+
+.movie-container select {
+    appearance: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    margin: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    border: 2px solid black;
+    padding: 5px 15px;
+    margin-bottom: 40px;
+    font-size: 14px;
+    border-radius: 5px;
+}
+
+.container {
+    perspective: 1000px;
+    margin: 40px auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.seat {
+    width: 30px;
+    height: 30px;
+    background-color: white;
+    margin: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    border: 2px solid black;
+}
+
+.occupied {
+    background-color: gray;
+    cursor: not-allowed;
+}
+
+.selected {
+    background-color: #01161E;
+}
+
+.seat:nth-of-type(2) {
+    margin-right: 18px;
+}
+
+.seat:nth-last-of-type(2) {
+    margin-left: 18px;
+}
+
+.seat:not(.occupied):hover {
+    cursor: pointer;
+    transform: scale(1.2);
+}
+
+.showcase .seat:not(.occupied):hover {
+    cursor: default;
+    transform: scale(1);
+}
+
+.seat-inner {
+    width: 100%;
+    height: 100%;
+    background-color: white; /* Default color */
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.seat.selected .seat-inner {
+    background-color: #01161E; /* Change color when selected */
+}
+
+.ticket-group {
+    width: 23%;
+    margin-right: 10px;
+}
+
+.ticket-group:last-child {
+    margin-right: 0;
+}
+
+.ticket-input {
+     display: flex;
+     align-items: center;
+}
+
+.ticket-input input[type="number"] {
+    width: 40px;
+    text-align: center;
+}
+
+.ticket-input button {
+    width: 30px;
+    height: 30px;
+    border: none;
+    background-color: #01161E;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.ticket-input button:hover {
+    background-color: #124559;
+}
+
+.showcase {
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
+    background: rgba(0, 0, 0, 0.1);
+    padding: 5px 10px;
+    border-radius: 5px;
+    color: #777;
+}
+
+i img {
+    width: 25px; /* Adjust the width and height as needed */
+    height: 25px;
+}
+
+.showcase li {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 10px;
+}
+
+.showcase li small {
+    margin-left: 2px;
+}
+
+.row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.screen {
+    background: #01161E;
+    height: 70px;
+    width: 70%;
+    margin: 15px 0;
+    transform: rotateX(-45deg);
+    box-shadow: 0 3px 10px rgba(255, 255, 255, 0.7);
+}
+
+p.text {
+    color: white;
+    margin: 40px 0;
+}
+
+.dropdown-toggle {
+    color: white;
+}
+
+p.text span {
+    color: white;
+    font-weight: 600;
+    box-sizing: content-box;
+}
+
+.continue {
+     float: right; /* or you could use 'margin-right' for specific spacing */
+     margin-right: 10%; /* Adjust as needed */
+     margin-left: 90%;
+     background-color: white;
+     color: black;
+     padding: 10px 20px;
+     font-size: 16px;
+     cursor: pointer;
+}
+
+/* Error message styles */
+.error-message {
+    color: black;
+    background-color: #FFD700; /* Yellow background color */
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    text-align: center;
+}

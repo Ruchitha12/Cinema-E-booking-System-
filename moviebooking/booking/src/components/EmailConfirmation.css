@@ -1,0 +1,20 @@
+/* Background color for the body */
+body {
+    font-family: Arial, sans-serif;
+    background-color: black;
+  }
+  
+  /* Container for the email confirmation message */
+  .orderbox {
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: black;
+  }
+  
+  /* Styling for the confirmation text */
+  .confirmationtext {
+    text-align: center;
+    font-size: 24px;
+  }
+  

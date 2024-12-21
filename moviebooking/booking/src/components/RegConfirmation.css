@@ -1,0 +1,33 @@
+.body {
+    background-color: white;
+}
+  .orderbox {
+    max-width: 400px;
+    margin: 0 auto;
+    margin-top: 100px; /* Adjust top margin for spacing */
+    padding: 20px;
+    background-color: #fff; /* White background for the box */
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+  }
+ 
+  .confirmationtext {
+    font-size: 24px;
+    text-align: center;
+    margin-bottom: 20px; /* Add some bottom margin */
+  }
+ 
+  /* Confirmation message styling */
+  .confirmation-message {
+    margin-top: 20px; /* Add space between confirmation text and login link */
+    text-align: center;
+  }
+ 
+  .confirmation-message a {
+    color: #3a7bfd; /* Blue color for the login link */
+    text-decoration: none;
+  }
+ 
+  .confirmation-message a:hover {
+    text-decoration: underline; /* Add underline on hover */
+  }
