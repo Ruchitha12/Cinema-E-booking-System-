@@ -1,0 +1,35 @@
+.navbar {
+    background-color: #01161E;
+}
+.navbar-brand {
+    font-family: 'fantasy';
+}
+.body {
+    font-family: Arial, sans-serif;
+
+    border:5px solid #01161E;
+    
+}
+
+.login-container {
+    max-width: 400px;
+    margin: 0 auto;
+    margin-top: 50px;
+}
+
+i img {
+    width: 25px; /* Adjust the width and height as needed */
+    height: 25px;
+}
+
+.confirmationtext {
+    font-size: 30px;
+    text-align: center;
+    border:5px solid #01161E;
+    margin-top: 15%;
+}
+
+.orderbox{
+    background-color: #ecf4ed;
+}
+

@@ -1,0 +1,65 @@
+/* ManagePromotions.css */
+body {
+    background-color: #124559; /* Dark teal background */
+    color: #EFF6E0; /* Light text */
+    font-family: Arial, sans-serif;
+  }
+  
+  .manage-promotions-container {
+    max-width: 700px;
+    margin: 30px auto;
+    padding: 20px;
+    background-color: #598392; /* Intermediate color for form background */
+    border-radius: 8px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  }
+  
+  .manage-promotions-container h2 {
+    border-bottom: 2px solid #AEC3B0; /* Lighter color for headers underlines */
+    padding-bottom: 10px;
+    color: #01161E; /* Darkest color for text */
+  }
+  
+  .form-group {
+    margin-bottom: 1em;
+  }
+  
+  .form-group label {
+    display: block;
+    margin-bottom: .5em;
+    color: #EFF6E0; /* Light text for labels */
+  }
+  
+  .form-group input[type="text"],
+  .form-group textarea,
+  .form-group select {
+    width: 100%;
+    padding: 10px;
+    border-radius: 4px;
+    border: 1px solid #AEC3B0; /* Lighter color for inputs borders */
+    background-color: #AEC3B0; /* Lighter color for input backgrounds */
+    color: #01161E; /* Dark text for readability */
+  }
+  
+  .form-group textarea {
+    height: 100px; /* Set a fixed height for textareas */
+  }
+  
+  .button-container {
+    text-align: right;
+  }
+  
+  .button-container button {
+    padding: 10px 20px;
+    color: #EFF6E0; /* Light text for buttons */
+    background-color: #01161E; /* Darkest color for buttons */
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .button-container button:hover {
+    background-color: #124559; /* Dark teal for button hover */
+  }
+  

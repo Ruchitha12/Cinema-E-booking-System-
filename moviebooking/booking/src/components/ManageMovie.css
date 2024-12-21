@@ -1,0 +1,135 @@
+/* ManageMovie.css */
+
+body {
+  background-color: #124559; /* Dark teal background */
+  color: #EFF6E0; /* Light text */
+  font-family: Arial, sans-serif;
+}
+
+h2 {
+  color: #01161E; /* Darkest color for headers */
+}
+
+.back-button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+form {
+  display: flex;
+  align-content: center;
+  max-width: 700px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #598392; /* Intermediate color for form background */
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.form-container h2 {
+  color: white; /* Light text for readability */
+  background-color: #01161E; /* Darkest color for headers */
+  text-align: center;
+  padding: 10px 0;
+  margin-bottom: 20px; /* Space between the title and the form */
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional: adds a subtle shadow for depth */
+}
+
+label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+input[type="text"],
+textarea,
+select {
+  width: calc(100% - 20px); /* Take up full width minus padding */
+  padding: 8px;
+  margin-top: 5px;
+  margin-bottom: 20px;
+  border-radius: 4px;
+  border: 1px solid #EFF6E0; /* Lightest color for borders */
+  background-color: white; /* Lighter color for input backgrounds */
+  color: #01161E; /* Dark text for readability */
+}
+
+input[type="text"]:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+  border-color: #124559; /* Dark teal outline when focused */
+}
+
+button {
+  padding: 10px 15px;
+  color: #EFF6E0; /* Light text */
+  background-color: #01161E; /* Darkest color for buttons */
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #124559; /* Dark teal for button hover */
+}
+
+.add-movie-button {
+  display: block;
+  width: 200px; /* Width of the button */
+  margin: 20px auto; /* Center the button */
+  padding: 15px 20px;
+  font-size: 18px; /* Larger font size */
+  font-weight: bold; /* Make the text bold */
+  background-color: #AEC3B0; /* Use the lighter color for the button */
+  color: #01161E; /* Dark text for readability */
+  border: none;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.add-movie-button:hover {
+  background-color: #EFF6E0; /* Lightest color for hover state */
+  color: #124559; /* Dark teal text color on hover */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Deeper shadow for hover state */
+}
+
+.movie-list-container {
+  max-width: 600px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #598392; /* Intermediate color for the background */
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.movie-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  margin-bottom: 10px;
+  background-color: #01161E; /* Darkest color for movie item background */
+  color: white; /* Light text for movie item */
+  border-radius: 4px;
+}
+
+.movie-item p {
+  margin: 0;
+}
+
+.movie-item button {
+  margin-left: 10px;
+}
+
+.input-container {
+  display: flex;
+}
+
+.form-container {
+  margin: 0 auto; /* Center the form container horizontally */
+}

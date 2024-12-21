@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <!-- Include Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,700;1,300;1,900&family=Lilita+One&display=swap" rel="stylesheet">
+    <style>
+        .navbar {
+            background-color: #01161E;
+        }
+        .navbar-brand {
+            font-family: 'fantasy';
+        }
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #124559;
+        }
+
+        .login-container {
+            max-width: 400px;
+            margin: 0 auto;
+            margin-top: 50px;
+        }
+
+        i img {
+            width: 25px; 
+            height: 25px;
+        }
+
+        /* Custom style for the login button */
+        .custom-login-button {
+            background-color: #598392; 
+            border: none;
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 350px;
+        }
+
+        .custom-login-button:hover {
+            background-color: #01161E; /* Change button color on hover */
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg ">
+        <div class="container-fluid">
+            <a class="navbar-brand active" style="color:white; font-family: 'Lato', sans-serif; font-family: 'Lilita One', cursive;" href="/">
+                <i><img src="https://i.ibb.co/jy62Srz/36a17f9402f64b66ba11ad785ec9ff3e.png"></i> MovieHub
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarScroll">
+                <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Login Card -->
+    <div class="container login-container">
+        <div class="card">
+            <div class="card-body" style="background-color: #AEC3B0";>
+                <h5 class="card-title">Login</h5>
+                <form id="loginForm" >
+                    <div class="mb-3">
+                        <label for="username" class="form-label">Email</label>
+                        <input type="text" class="form-control" id="email" name="email" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="password" class="form-label">Password</label>
+                        <input type="password" class="form-control" id="password" name="password" required>
+                    </div>
+                    <button type="submit" class="custom-login-button btn btn-primary btn-block" href="/">Login</button>
+                </form>
+                <p class="mt-3">Don't have an account? <a href="SignUp.html" id="signupLink">Sign Up</a></p>
+                <p class="mt-3">Forgot password? <a href="ForgotPassword.html" id="forgotpassword">Reset Password</a></p>
+            </div>
+        </div>
+    </div>
+    <!-- Include Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+/* OrderHistory.css */
+.order-history-container {
+  margin: 20px;
+}
+
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+
+table, th, td {
+  border: 1px solid black;
+  color: black; /* Set text color to black */
+}
+
+
+th, td {
+  padding: 8px;
+  text-align: left;
+}
+
+
+th {
+  background-color: #598392;
+}
+
+
+.title {
+  padding: 10px;
+}

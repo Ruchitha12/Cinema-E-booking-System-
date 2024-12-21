@@ -1,0 +1,113 @@
+/* ManageUsers.css */
+body {
+    background-color: #124559; /* Dark teal background */
+    color: #EFF6E0; /* Light text */
+    font-family: Arial, sans-serif;
+  }
+  
+  nav {
+    background-color: #01161E; /* Darkest color for navbar */
+    color: white;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  nav a, nav button {
+    color: white;
+    text-decoration: none;
+    padding: 5px 15px;
+    border: none;
+    background: none;
+  }
+  
+  nav a:hover, nav button:hover {
+    background-color: #124559;
+    border-radius: 4px;
+  }
+  
+  .manage-users {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #598392; /* Intermediate color for form background */
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  }
+  
+  .manage-users h2, .manage-users h3 {
+    color: #01161E; /* Darkest color for headers */
+    margin-bottom: 20px;
+  }
+  
+  .form-group {
+    margin-bottom: 15px;
+  }
+  
+  .form-group label {
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  .form-group input[type="text"],
+  .form-group input[type="email"],
+  .form-group input[type="password"] {
+    width: calc(33.333% - 10px);
+    padding: 10px;
+    margin-right: 10px;
+    border-radius: 4px;
+    border: 1px solid #AEC3B0; /* Lighter color for borders */
+    background-color: white; /* Lightest color for input backgrounds */
+    color: #01161E; /* Dark text for readability */
+  }
+  
+  .form-group input[type="text"]:last-child,
+  .form-group input[type="email"]:last-child,
+  .form-group input[type="password"]:last-child {
+    margin-right: 0;
+  }
+  
+  
+  .form-group button {
+    padding: 10px 20px;
+    color: #EFF6E0; /* Light text */
+    background-color: #01161E; /* Darkest color for buttons */
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .form-group button:hover {
+    background-color: #124559; /* Dark teal for button hover */
+  }
+  
+  .table-users {
+    width: 100%;
+    margin-top: 20px;
+    border-collapse: collapse;
+  }
+  
+  .table-users th, .table-users td {
+    text-align: left;
+    padding: 10px;
+    border-bottom: 1px solid #AEC3B0; /* Lighter color for table borders */
+  }
+  
+  .table-users th {
+    background-color: #01161E; /* Darkest color for table headers */
+    color: white; /* Light text for table headers */
+  }
+  
+  .table-users tr:hover {
+    background-color: #124559; /* Dark teal for row hover */
+  }
+  
+  .action-buttons button {
+    margin-right: 5px;
+    margin-top: 5px;
+  }
+  
+  /* Add additional styles as needed */
+  

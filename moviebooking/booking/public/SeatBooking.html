@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MovieTickets!</title>
+    <link rel="icon" href="https://i.ibb.co/jy62Srz/36a17f9402f64b66ba11ad785ec9ff3e.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,700;1,300;1,900&family=Lilita+One&display=swap" rel="stylesheet">
+    <style>
+        /* Add your custom styles here */
+        .navbar {
+            background-color: #01161E;
+        }
+        .navbar-brand {
+            font-family: 'fantasy';
+        }
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #124559;
+        }
+
+
+        * {
+            font-family: "Montserrat", sans-serif !important;
+            box-sizing: border-box;
+        }
+
+        .movie-container {
+            background-color: white;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            color: black; /* Text color */
+        }
+
+        .movie-container select {
+            appearance: none;
+            -moz-appearance: none;
+            -webkit-appearance: none;
+            margin: 5px;
+            border-radius: 5px;
+            cursor: pointer;
+            border: 2px solid black;
+            padding: 5px 15px;
+            margin-bottom: 40px;
+            font-size: 14px;
+            border-radius: 5px;
+        }
+
+        .container {
+            perspective: 1000px;
+            margin: 40px 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .seat {
+            width: 30px;
+            height: 30px;
+            background-color: white;
+            margin: 5px;
+            border-radius: 5px;
+            cursor: pointer;
+            border: 2px solid black;
+        }
+
+        .occupied {
+            background-color: gray;
+            cursor: not-allowed;
+        }
+
+        .selected {
+            background-color: #01161E;
+        }
+
+        .seat:nth-of-type(2) {
+            margin-right: 18px;
+        }
+
+        .seat:nth-last-of-type(2) {
+            margin-left: 18px;
+        }
+
+        .seat:not(.occupied):hover {
+            cursor: pointer;
+            transform: scale(1.2);
+        }
+
+        .showcase .seat:not(.occupied):hover {
+            cursor: default;
+            transform: scale(1);
+        }
+        
+        .seat-inner {
+            width: 100%;
+            height: 100%;
+            background-color: white; /* Default color */
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+        
+        .seat.selected .seat-inner {
+            background-color: #01161E; /* Change color when selected */
+        }
+        /* .ticket-row {
+             display: flex;
+             justify-content: flex-start;
+             margin-bottom: 20px;
+        } */
+
+        .ticket-group {
+            width: 23%;
+            margin-right: 10px;
+        }
+        
+        .ticket-group:last-child {
+            margin-right: 0;
+        }
+
+        .ticket-input {
+             display: flex;
+             align-items: center;
+        }
+
+         .ticket-input input[type="number"] {
+            width: 40px;
+            text-align: center;
+        }
+
+        .ticket-input button {
+            width: 30px;
+            height: 30px;
+            border: none;
+            background-color: #01161E;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .ticket-input button:hover {
+            background-color: #124559;
+        }
+        .showcase {
+            display: flex;
+            justify-content: space-between;
+            list-style-type: none;
+            background: rgba(0, 0, 0, 0.1);
+            padding: 5px 10px;
+            border-radius: 5px;
+            color: #777;
+        }
+        i img {
+            width: 25px; /* Adjust the width and height as needed */
+            height: 25px;
+        }
+
+        .showcase li {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 10px;
+        }
+
+        .showcase li small {
+            margin-left: 2px;
+        }
+
+        .row {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .screen {
+            background: #01161E;
+            height: 70px;
+            width: 70%;
+            margin: 15px 0;
+            transform: rotateX(-45deg);
+            box-shadow: 0 3px 10px rgba(255, 255, 255, 0.7);
+        }
+
+        p.text {
+            margin: 40px 0;
+        }
+        
+        .dropdown-toggle {
+            color: white 
+        }
+
+        p.text span {
+            color: #01161E;
+            font-weight: 600;
+            box-sizing: content-box;
+        }
+
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg" >
+        <div class="container-fluid">
+            <a class="navbar-brand active" style="color:white; font-family: 'Lato', sans-serif; font-family: 'Lilita One', cursive;" href="/">
+                <i><img src="https://i.ibb.co/jy62Srz/36a17f9402f64b66ba11ad785ec9ff3e.png"></i> MovieHub
+            </a>
+            <a class="nav-link navbar-cart" href="#">
+                <i class="fa fa-shopping-cart"></i>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarScroll">
+                <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Movies
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
+                            <li><a class="dropdown-item" href="#">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-camera-reels-fill" viewBox="0 0 16 16">
+                                    <path d="M6 3a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
+                                    <path d="M9 6a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"/>
+                                    <path d="M9 6h.5a2 2 0 0 1 1.983 1.738l3.11-1.382A1 1 0 0 1 16 7.269v7.462a1 1 0 0 1-1.406.913l-3.111-1.382A2 2 0 0 1 9.5 16H2a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h7z"/>
+                                </svg> New Movies
+                            </a></li>
+                            <li><a class="dropdown-item" href="#">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-camera-reels-fill" viewBox="0 0 16 16">
+                                    <path d="M6 3a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
+                                    <path d="M9 6a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"/>
+                                    <path d="M9 6h.5a2 2 0 0 1 1.983 1.738l3.11-1.382A1 1 0 0 1 16 7.269v7.462a1 1 0 0 1-1.406.913l-3.111-1.382A2 2 0 0 1 9.5 16H2a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h7z"/>
+                                </svg> Up-coming Releases
+                            </a></li>
+                            <li><a class="dropdown-item" href="#">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-camera-reels-fill" viewBox="0 0 16 16">
+                                    <path d="M6 3a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
+                                    <path d="M9 6a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"/>
+                                    <path d="M9 6h.5a2 2 0 0 1 1.983 1.738l3.11-1.382A1 1 0 0 1 16 7.269v7.462a1 1 0 0 1-1.406.913l-3.111-1.382A2 2 0 0 1 9.5 16H2a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h7z"/>
+                                </svg> International Movies
+                            </a></li>
+                            <li><a class="dropdown-item" href="#">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-camera-reels-fill" viewBox="0 0 16 16">
+                                    <path d="M6 3a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
+                                    <path d="M9 6a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"/>
+                                    <path d="M9 6h.5a2 2 0 0 1 1.983 1.738l3.11-1.382A1 1 0 0 1 16 7.269v7.462a1 1 0 0 1-1.406.913l-3.111-1.382A2 2 0 0 1 9.5 16H2a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h7z"/>
+                                </svg> Kids Movies
+                            </a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="movie-container">
+        <h1><?= $movie['genre']; ?></h1>
+        <div>
+          <label for="showtime">Select Showtime:</label>
+          <select id="showtime">
+              <option value="0">Select Showtime</option>
+              <option value="1">12:00 PM</option>
+              <option value="2">3:00 PM</option>
+              <option value="3">6:00 PM</option>
+          </select> 
+          <h5>Select age and number of Tickets:</h5>
+      <div class="ticket-row">
+          <div class ="ticket-group"></div>
+             <label for="child">Child(0-8):</label>
+             <div class="ticket-input">
+                 <button class="ticket-decrease" type="button">-</button>
+                 <input type="number" id="child" name="child" min="0" value="0">
+                 <button class="ticket-increase" type="button">+</button>
+              </div>   
+          </div>
+      </div>
+      <div class="ticket-group">
+        <label for="under18">Under(8-17):</label>
+        <div class="ticket-input">
+            <button class="ticket-decrease" type="button">-</button>
+            <input type="number" id="child" name="child" min="0" value="0">
+            <button class="ticket-increase" type="button">+</button>
+        </div>
+    </div>
+      <div class = "ticket-group">
+          <label for="above18">Above(18-59):</label>
+          <div class="ticket-input">
+              <button class="ticket-decrease" type="button">-</button>
+              <input type="number" id="adult" name="adult" min="0" value="0">
+              <button class="ticket-increase" type="button">+</button>
+          </div>
+      </div>
+      <div class="ticket-group">
+          <label for="senior">Senior(>60):</label>
+          <div class="ticket-input">
+              <button class="ticket-decrease" type="button">-</button>
+              <input type="number" id="senior" name="senior" min="0" value="0">
+              <button class="ticket-increase" type="button">+</button>
+          </div>
+      </div> 
+      </div>
+        <ul class="showcase">
+          <li>
+            <div class="seat"></div>
+            <small>N/A</small>
+          </li>
+          <li>
+            <div class="seat selected"></div>
+            <small>Selected</small>
+          </li>
+          <li>
+            <div class="seat occupied"></div>
+            <small>Occupied</small>
+          </li>    
+        </ul>
+        
+        <div class="container">
+          <div class="screen"></div>
+          
+          <div class="row">
+              <div class="seat"></div>
+              <div class="seat"></div>
+              <div class="seat"></div>
+              <div class="seat"></div>
+              <div class="seat"></div>
+              <div class="seat"></div>
+              <div class="seat"></div>
+              <div class="seat"></div>
+            </div>
+            <div class="row">
+              <div class="seat"></div>
+              <div class="seat"></div>
+              <div class="seat"></div>
+              <div class="seat occupied"></div>
+              <div class="seat occupied"></div>
+              <div class="seat"></div>
+              <div class="seat"></div>
+              <div class="seat"></div>
+            </div>
+            <div class="row">
+              <div class="seat"></div>
+              <div class="seat"></div>
+              <div class="seat"></div>
+              <div class="seat"></div>
+              <div class="seat"></div>
+              <div class="seat"></div>
+              <div class="seat occupied"></div>
+              <div class="seat occupied"></div>
+            </div>
+            <div class="row">
+              <div class="seat"></div>
+              <div class="seat"></div>
+              <div class="seat"></div>
+              <div class="seat"></div>
+              <div class="seat"></div>
+              <div class="seat"></div>
+              <div class="seat"></div>
+              <div class="seat"></div>
+            </div>
+            <div class="row">
+              <div class="seat"></div>
+              <div class="seat"></div>
+              <div class="seat"></div>
+              <div class="seat occupied"></div>
+              <div class="seat occupied"></div>
+              <div class="seat"></div>
+              <div class="seat"></div>
+              <div class="seat"></div>
+            </div>
+            <div class="row">
+              <div class="seat"></div>
+              <div class="seat"></div>
+              <div class="seat"></div>
+              <div class="seat"></div>
+              <div class="seat occupied"></div>
+              <div class="seat occupied"></div>
+              <div class="seat occupied"></div>
+              <div class="seat"></div>
+            </div>
+          
+          <p class="text">
+          You have selected <span id="count">0</span><br>
+          Subtotal: $<span id="total">0</span>
+      </p>
+      <button style="background-color: white; width: 120px;height: 40px;border-radius: 5px;"><a href="CheckOut.html">Checkout</a></button>
+      
+        </div>
+      </div>
+
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+    // Get all increase and decrease buttons
+    const increaseButtons = document.querySelectorAll('.ticket-increase');
+    const decreaseButtons = document.querySelectorAll('.ticket-decrease');
+
+    // Function to handle ticket increase
+    function increaseTicket(input) {
+        input.value = parseInt(input.value) + 1;
+    }
+
+    // Function to handle ticket decrease
+    function decreaseTicket(input) {
+        const currentValue = parseInt(input.value);
+        if (currentValue > 0) {
+            input.value = currentValue - 1;
+        }
+    }
+
+    // Add click event listeners to all increase buttons
+    increaseButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            increaseTicket(button.parentNode.querySelector('input'));
+        });
+    });
+
+    // Add click event listeners to all decrease buttons
+    decreaseButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            decreaseTicket(button.parentNode.querySelector('input'));
+        });
+    });
+
+
+    // Get all seats that are not occupied
+    const seats = document.querySelectorAll('.seat:not(.occupied)');
+
+    // Function to toggle seat selection
+    function toggleSeatSelection(seat) {
+        seat.classList.toggle('selected');
+    }
+
+    // Add click event listeners to all seats
+    seats.forEach(seat => {
+        seat.addEventListener('click', () => {
+            toggleSeatSelection(seat);
+        });
+    });
+
+    </script>    -->
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+    // Prices for each ticket type
+    const ticketPrices = {
+        child: 5,
+        under: 7,
+        above: 10,
+        senior: 6
+    };
+
+    // Update count and total function
+    function updateTotal() {
+        const childTickets = parseInt(document.getElementById('child').value) || 0;
+        const underTickets = parseInt(document.getElementById('under18').value) || 0;
+        const aboveTickets = parseInt(document.getElementById('above18').value) || 0;
+        const seniorTickets = parseInt(document.getElementById('senior').value) || 0;
+
+        const totalSelectedTickets = childTickets + underTickets + aboveTickets + seniorTickets;
+        const totalPrice = (childTickets * ticketPrices.child) +
+                            (underTickets * ticketPrices.under) +
+                            (aboveTickets * ticketPrices.above) +
+                            (seniorTickets * ticketPrices.senior);
+
+        // Update DOM with new total and count
+        document.getElementById('count').innerText = totalSelectedTickets;
+        document.getElementById('total').innerText = totalPrice.toFixed(2);
+    }
+
+    // Add event listeners to all the ticket inputs for change event
+    document.querySelectorAll('.ticket-input input[type="number"]').forEach(input => {
+        input.addEventListener('change', updateTotal);
+    });
+
+    // Get all increase and decrease buttons
+    document.querySelectorAll('.ticket-increase').forEach(button => {
+        button.addEventListener('click', () => {
+            const input = button.previousElementSibling;
+            input.value = parseInt(input.value) + 1;
+            updateTotal();
+        });
+    });
+
+    document.querySelectorAll('.ticket-decrease').forEach(button => {
+        button.addEventListener('click', () => {
+            const input = button.nextElementSibling;
+            const currentValue = parseInt(input.value);
+            if (currentValue > 0) {
+                input.value = currentValue - 1;
+            }
+            updateTotal();
+        });
+    });
+
+    // Get all seats that are not occupied
+    document.querySelectorAll('.seat:not(.occupied)').forEach(seat => {
+        seat.addEventListener('click', () => {
+            seat.classList.toggle('selected');
+            updateTotal(); // This will now also update when seats are selected
+        });
+    });
+
+
+
+    // // Function to toggle seat selection
+    // function toggleSeatSelection(seat) {
+    //     seat.classList.toggle('selected');
+    //     updateTotal(); // This will now also update when seats are selected
+    // }
+
+    // // Add click event listeners to all seats
+    // seats.forEach(seat => {
+    //     seat.addEventListener('click', () => {
+    //         toggleSeatSelection(seat);
+    //     });
+    // });
+
+</script>
+</body>
+</html>
+
+
+
+
+</body>
+</html>
